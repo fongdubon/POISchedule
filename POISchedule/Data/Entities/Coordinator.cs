@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace POISchedule.Data.Entities
 {
-    //Tercer commit
+    //Cuarto commit
     public class Coordinator
     {
         public int Id { get; set; }
