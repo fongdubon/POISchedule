@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 
 namespace POISchedule.Data.Entities
 {
+    //Segundo commit
     public class Coordinator
     {
         public int Id { get; set; }
