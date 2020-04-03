@@ -119,7 +119,7 @@ namespace POISchedule.Controllers
                         model.FullName,
                         "Teacher");
                 }
-                _context.Add(teacher);
+                _context.Update(teacher);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
