@@ -7,16 +7,20 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using POISchedule.Data;
 using POISchedule.Data.Entities;
+using POISchedule.Helpers;
 
 namespace POISchedule.Controllers
 {
     public class StudentsController : Controller
     {
         private readonly DataContext _context;
+        private readonly IImageHelper imageHelper;
 
-        public StudentsController(DataContext context)
+        public StudentsController(DataContext context, 
+            IImageHelper imageHelper)
         {
             _context = context;
+            this.imageHelper = imageHelper;
         }
 
         // GET: Students
@@ -46,6 +50,7 @@ namespace POISchedule.Controllers
         // GET: Students/Create
         public IActionResult Create()
         {
+
             return View();
         }
 
