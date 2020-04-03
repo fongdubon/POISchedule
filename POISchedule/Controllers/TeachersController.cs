@@ -7,25 +7,28 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using POISchedule.Data;
 using POISchedule.Data.Entities;
+using POISchedule.Helpers;
+using POISchedule.Models;
 
 namespace POISchedule.Controllers
 {
     public class TeachersController : Controller
     {
         private readonly DataContext _context;
+        private readonly IImageHelper _imageHelper;
 
-        public TeachersController(DataContext context)
+        public TeachersController(DataContext context,
+            IImageHelper imageHelper)
         {
             _context = context;
+            _imageHelper = imageHelper;
         }
 
-        // GET: Teachers
         public async Task<IActionResult> Index()
         {
             return View(await _context.Teachers.ToListAsync());
         }
 
-        // GET: Teachers/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -42,30 +45,37 @@ namespace POISchedule.Controllers
 
             return View(teacher);
         }
-
-        // GET: Teachers/Create
         public IActionResult Create()
         {
-            return View();
+            var model = new TeacherViewModel();
+            return View(model);
         }
 
-        // POST: Teachers/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,FirstName,LastName,ImageUrl")] Teacher teacher)
+        public async Task<IActionResult> Create(TeacherViewModel model)
         {
             if (ModelState.IsValid)
             {
+                var teacher = new Teacher
+                {
+                    FirstName = model.FirstName,
+                    LastName = model.LastName
+                };
+                if(model.ImageFile != null)
+                {
+                    teacher.ImageUrl = await _imageHelper.UploadImageAsync(
+                        model.ImageFile,
+                        model.FullName,
+                        "Teacher");
+                }
                 _context.Add(teacher);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(teacher);
+            return View(model);
         }
 
-        // GET: Teachers/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -78,42 +88,42 @@ namespace POISchedule.Controllers
             {
                 return NotFound();
             }
-            return View(teacher);
+            var model = new TeacherViewModel
+            {
+                Id = teacher.Id,
+                FirstName = teacher.FirstName,
+                LastName = teacher.LastName,
+                ImageUrl = teacher.ImageUrl
+            };
+            return View(model);
         }
 
-        // POST: Teachers/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,FirstName,LastName,ImageUrl")] Teacher teacher)
+        public async Task<IActionResult> Edit(TeacherViewModel model)
         {
-            if (id != teacher.Id)
-            {
-                return NotFound();
-            }
-
             if (ModelState.IsValid)
             {
-                try
+                var teacher = await _context.Teachers.FindAsync(model.Id);
+                if(teacher==null)
                 {
-                    _context.Update(teacher);
-                    await _context.SaveChangesAsync();
+                    return NotFound();
                 }
-                catch (DbUpdateConcurrencyException)
+
+                teacher.FirstName = model.FirstName;
+                teacher.LastName = model.LastName;
+                if (model.ImageFile != null)
                 {
-                    if (!TeacherExists(teacher.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                    teacher.ImageUrl = await _imageHelper.UploadImageAsync(
+                        model.ImageFile,
+                        model.FullName,
+                        "Teacher");
                 }
+                _context.Add(teacher);
+                await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(teacher);
+            return View(model);
         }
 
         // GET: Teachers/Delete/5

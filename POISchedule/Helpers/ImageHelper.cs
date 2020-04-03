@@ -12,7 +12,7 @@
             var file = $"{nameFile}{guid}.png";
             var path = Path.Combine(
                 Directory.GetCurrentDirectory(),
-                $"wwwroot\\images\\{folder}");
+                $"wwwroot\\images\\{folder}", file);
             using (var stream = new FileStream(path, FileMode.Create))
             {
                 await imageFile.CopyToAsync(stream);
