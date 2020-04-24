@@ -7,12 +7,12 @@
         public int Id { get; set; }
 
         [Required(ErrorMessage ="{0} es obligatorio")]
-        [MaxLength(15,ErrorMessage ="Debe introducir máximo 15 caracteres")]
+        [MaxLength(15,ErrorMessage ="Debe introducir máximo {1} caracteres")]
         [Display(Name ="Nombre")]
         public string FirstName { get; set; }
 
         [Required(ErrorMessage = "{0} es obligatorio")]
-        [MaxLength(30, ErrorMessage = "Debe introducir máximo 15 caracteres")]
+        [MaxLength(30, ErrorMessage = "Debe introducir máximo {1} caracteres")]
         [Display(Name = "Apellidos")]
         public string LastName { get; set; }
 

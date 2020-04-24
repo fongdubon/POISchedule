@@ -33,12 +33,24 @@
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
                     <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
-                    <li><a asp-area="" asp-controller="Activities" asp-action="Index">Activities</a></li>
-                    <li><a asp-area="" asp-controller="CleaningStaffs" asp-action="Index">Cleaning Staff</a></li>
-                    <li><a asp-area="" asp-controller="Coordinators" asp-action="Index">Coordinator</a></li>
-                    <li><a asp-area="" asp-controller="Students" asp-action="Index">Student</a></li>
-                    <li><a asp-area="" asp-controller="Subjects" asp-action="Index">Subject</a></li>
-                    <li><a asp-area="" asp-controller="Teachers" asp-action="Index">Teacher</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Catalogues <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a asp-area="" asp-controller="Activities" asp-action="Index">Activities</a></li>
+                            <li><a asp-area="" asp-controller="ClassroomTypes" asp-action="Index">Classroom Types</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Colaborators <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a asp-area="" asp-controller="CleaningStaffs" asp-action="Index">Cleaning Staff</a></li>
+                            <li><a asp-area="" asp-controller="Coordinators" asp-action="Index">Coordinators</a></li>
+                            <li><a asp-area="" asp-controller="Students" asp-action="Index">Students</a></li>
+                            <li><a asp-area="" asp-controller="Teachers" asp-action="Index">Teachers</a></li>
+                        </ul>
+                    </li>
+                    <li><a asp-area="" asp-controller="Subjects" asp-action="Index">Subjects</a></li>
+                    
                 </ul>
             </div>
         </div>

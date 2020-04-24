@@ -3,8 +3,9 @@ namespace POISchedule.Data.Entities
 {
     using System.ComponentModel.DataAnnotations;
 
-    public class Activity : IEntity
+    public class ClassroomType : IEntity
     {
+
         public int Id { get; set; }
 
         [Required(ErrorMessage = "{0} es obligatorio")]
