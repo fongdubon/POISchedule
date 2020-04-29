@@ -1,32 +1,31 @@
-﻿using System.Linq;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using POISchedule.Data;
 using POISchedule.Data.Entities;
-using POISchedule.Helpers;
-using POISchedule.Models;
-
 
 namespace POISchedule.Controllers
 {
     public class CleaningStaffsController : Controller
     {
         private readonly DataContext _context;
-        private readonly IImageHelper _imageHelper;
 
-        public CleaningStaffsController(DataContext context, 
-            IImageHelper imageHelper)
+        public CleaningStaffsController(DataContext context)
         {
             _context = context;
-            _imageHelper = imageHelper;
         }
 
+        // GET: CleaningStaffs
         public async Task<IActionResult> Index()
         {
             return View(await _context.CleaningStaffs.ToListAsync());
         }
 
+        // GET: CleaningStaffs/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -44,34 +43,29 @@ namespace POISchedule.Controllers
             return View(cleaningStaff);
         }
 
+        // GET: CleaningStaffs/Create
         public IActionResult Create()
         {
-            var model = new CleaningStaffViewModel();
             return View();
         }
 
+        // POST: CleaningStaffs/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(CleaningStaffViewModel model)
+        public async Task<IActionResult> Create([Bind("Id,FirstName,LastName,ImageUrl")] CleaningStaff cleaningStaff)
         {
             if (ModelState.IsValid)
             {
-                var cleaningStaff = new CleaningStaff
-                {
-                    FirstName = model.FirstName,
-                    LastName = model.LastName
-                };
-                if(model.ImageFile != null)
-                {
-                    cleaningStaff.ImageUrl = await _imageHelper.UploadImageAsync(model.ImageFile, model.FullName, "CleaningStaff");
-                };
                 _context.Add(cleaningStaff);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(model);
+            return View(cleaningStaff);
         }
 
+        // GET: CleaningStaffs/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -84,39 +78,42 @@ namespace POISchedule.Controllers
             {
                 return NotFound();
             }
-            var model = new CleaningStaffViewModel
-            {
-                Id = cleaningStaff.Id,
-                FirstName = cleaningStaff.FirstName,
-                LastName = cleaningStaff.LastName,
-                ImageUrl = cleaningStaff.ImageUrl
-            };
-            return View(model);
+            return View(cleaningStaff);
         }
 
+        // POST: CleaningStaffs/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(CleaningStaffViewModel model)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,FirstName,LastName,ImageUrl")] CleaningStaff cleaningStaff)
         {
+            if (id != cleaningStaff.Id)
+            {
+                return NotFound();
+            }
+
             if (ModelState.IsValid)
             {
-                var cleaningStaff = await _context.CleaningStaffs.FindAsync(model.Id);
-                if (cleaningStaff == null)
+                try
                 {
-                    return NotFound();
+                    _context.Update(cleaningStaff);
+                    await _context.SaveChangesAsync();
                 }
-
-                cleaningStaff.FirstName = model.FirstName;
-                cleaningStaff.LastName = model.LastName;
-                if(model.ImageFile != null)
+                catch (DbUpdateConcurrencyException)
                 {
-                    cleaningStaff.ImageUrl = await _imageHelper.UploadImageAsync(model.ImageFile, model.FullName, "CleaningStaff");
+                    if (!CleaningStaffExists(cleaningStaff.Id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
                 }
-                _context.Update(cleaningStaff);
-                await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(model);
+            return View(cleaningStaff);
         }
 
         // GET: CleaningStaffs/Delete/5
