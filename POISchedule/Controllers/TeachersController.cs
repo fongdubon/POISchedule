@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using POISchedule.Data;
 using POISchedule.Data.Entities;
 using POISchedule.Helpers;
 using POISchedule.Models;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace POISchedule.Controllers
 {
@@ -62,7 +59,7 @@ namespace POISchedule.Controllers
                     FirstName = model.FirstName,
                     LastName = model.LastName
                 };
-                if(model.ImageFile != null)
+                if (model.ImageFile != null)
                 {
                     teacher.ImageUrl = await _imageHelper.UploadImageAsync(
                         model.ImageFile,
@@ -105,7 +102,7 @@ namespace POISchedule.Controllers
             if (ModelState.IsValid)
             {
                 var teacher = await _context.Teachers.FindAsync(model.Id);
-                if(teacher==null)
+                if (teacher == null)
                 {
                     return NotFound();
                 }
