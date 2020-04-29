@@ -1,13 +1,12 @@
 ﻿@model POISchedule.Data.Entities.CleaningStaff
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "Detalle del personal de limpieza";
 }
 
-<h2>Details</h2>
+<h2>Detalle del Personal de limpieza</h2>
 
 <div>
-    <h4>CleaningStaff</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -26,11 +25,14 @@
             @Html.DisplayNameFor(model => model.ImageUrl)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.ImageUrl)
+            @if (!string.IsNullOrEmpty(Model.ImageUrl))
+            {
+                <img src="@Url.Content(Model.ImageUrl)" style="width:100px;height:100px" />
+            }
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
+    <a asp-action="Index" class="btn btn-success"><span class="glyphicon glyphicon-arrow-left"></span></a>
 </div>

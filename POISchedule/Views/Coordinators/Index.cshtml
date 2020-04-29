@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<POISchedule.Data.Entities.Coordinator>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Listado de Coordinadores";
 }
 
-<h2>Index</h2>
+<h2>Listado de Coordinadores</h2>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-primary"><span class="glyphicon glyphicon-plus"></span></a>
 </p>
 <table class="table">
     <thead>
@@ -28,18 +28,22 @@
 @foreach (var item in Model) {
         <tr>
             <td>
+                @if (!string.IsNullOrEmpty(item.ImageUrl))
+                {
+                    <img src="@Url.Content(item.ImageUrl)" style="width:100px;height:100px" />
+                }
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.FirstName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.LastName)
             </td>
+            
             <td>
-                @Html.DisplayFor(modelItem => item.ImageUrl)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-info"><span class="glyphicon glyphicon-list"></span></a>
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger"><span class="glyphicon glyphicon-trash"></span></a>
             </td>
         </tr>
 }
