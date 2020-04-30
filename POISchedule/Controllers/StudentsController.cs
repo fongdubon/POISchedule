@@ -15,13 +15,13 @@ namespace POISchedule.Controllers
     public class StudentsController : Controller
     {
         private readonly DataContext _context;
-        private readonly IImageHelper imageHelper;
+        private readonly IImageHelper _imageHelper;
 
         public StudentsController(DataContext context, 
             IImageHelper imageHelper)
         {
             _context = context;
-            this.imageHelper = imageHelper;
+            _imageHelper = imageHelper;
         }
 
         // GET: Students
@@ -67,7 +67,7 @@ namespace POISchedule.Controllers
                 };
                 if (model.ImageFile != null)
                 {
-                    student.ImageUrl = await imageHelper.UploadImageAsync(
+                    student.ImageUrl = await _imageHelper.UploadImageAsync(
                         model.ImageFile,
                         model.FullName,
                         "Student");
@@ -92,7 +92,14 @@ namespace POISchedule.Controllers
             {
                 return NotFound();
             }
-            return View(student);
+            var model = new StudentViewModel
+            {
+                Id = student.Id,
+                FirstName = student.FirstName,
+                LastName = student.LastName,
+                ImageUrl = student.ImageUrl
+            };
+            return View(model);
         }
 
         // POST: Students/Edit/5
@@ -100,34 +107,27 @@ namespace POISchedule.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,FirstName,LastName,ImageUrl")] Student student)
+        public async Task<IActionResult> Edit(StudentViewModel model)
         {
-            if (id != student.Id)
-            {
-                return NotFound();
-            }
-
             if (ModelState.IsValid)
             {
-                try
+                var student = await _context.Students.FindAsync(model.Id);
+                if (student == null)
                 {
-                    _context.Update(student);
-                    await _context.SaveChangesAsync();
+                    return NotFound();
                 }
-                catch (DbUpdateConcurrencyException)
+
+                student.FirstName = model.FirstName;
+                student.LastName = model.LastName;
+                if (model.ImageFile != null)
                 {
-                    if (!StudentExists(student.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                    student.ImageUrl = await _imageHelper.UploadImageAsync(model.ImageFile, model.FullName, "Student");
                 }
+                _context.Update(student);
+                await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(student);
+            return View(model);
         }
 
         // GET: Students/Delete/5
