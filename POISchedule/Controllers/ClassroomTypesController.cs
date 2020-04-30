@@ -21,6 +21,23 @@
             return View(await context.ClassroomTypes.ToListAsync());
         }
 
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var activity = await this.context.ClassroomTypes
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (activity == null)
+            {
+                return NotFound();
+            }
+
+            return View(activity);
+        }
+
         public IActionResult Create()
         {
             return View();
@@ -84,6 +101,33 @@
                 return RedirectToAction(nameof(Index));
             }
             return View(classroomType);
+        }
+
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var classroomType = await this.context.ClassroomTypes
+                .FirstOrDefaultAsync(m => m.Id == id);
+            if (classroomType == null)
+            {
+                return NotFound();
+            }
+
+            return View(classroomType);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var classroomType = await this.context.ClassroomTypes.FindAsync(id);
+            this.context.ClassroomTypes.Remove(classroomType);
+            await this.context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
         }
 
         private bool ClassroomTypeExists(int id)
