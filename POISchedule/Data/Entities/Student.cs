@@ -2,7 +2,7 @@
 namespace POISchedule.Data.Entities
 {
     using System.ComponentModel.DataAnnotations;
-
+    //Gus
     public class Student : IEntity
     {
         public int Id { get; set; }

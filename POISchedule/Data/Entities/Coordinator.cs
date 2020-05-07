@@ -3,7 +3,7 @@ namespace POISchedule.Data.Entities
 {
     using System.ComponentModel.DataAnnotations;
 
-    //Quinto commit
+    //Karla
     public class Coordinator
     {
         public int Id { get; set; }
