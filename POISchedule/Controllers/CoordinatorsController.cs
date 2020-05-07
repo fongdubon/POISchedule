@@ -1,22 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using POISchedule.Data;
 using POISchedule.Data.Entities;
+using POISchedule.Helpers;
+using POISchedule.Models;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace POISchedule.Controllers
 {
     public class CoordinatorsController : Controller
     {
         private readonly DataContext _context;
+        private readonly IImageHelper _imageHelper;
 
-        public CoordinatorsController(DataContext context)
+        public CoordinatorsController(DataContext context,
+            IImageHelper imageHelper)
         {
             _context = context;
+            _imageHelper = imageHelper;
         }
 
         // GET: Coordinators
@@ -46,23 +48,31 @@ namespace POISchedule.Controllers
         // GET: Coordinators/Create
         public IActionResult Create()
         {
-            return View();
+            var model = new CoordinatorViewModel();
+            return View(model);
         }
 
-        // POST: Coordinators/Create
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,FirstName,LastName,ImageUrl")] Coordinator coordinator)
+        public async Task<IActionResult> Create(CoordinatorViewModel model)
         {
             if (ModelState.IsValid)
             {
+                var coordinator = new Coordinator
+                {
+                    FirstName = model.FirstName,
+                    LastName = model.LastName
+
+                };
+                if (model.ImageFile != null)
+                {
+                    coordinator.ImageUrl = await _imageHelper.UploadImageAsync(model.ImageFile, model.FullName, "Coordinator");
+                }
                 _context.Add(coordinator);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(coordinator);
+            return View(model);
         }
 
         // GET: Coordinators/Edit/5
@@ -78,42 +88,39 @@ namespace POISchedule.Controllers
             {
                 return NotFound();
             }
-            return View(coordinator);
+            var model = new CoordinatorViewModel
+            {
+                Id = coordinator.Id,
+                FirstName = coordinator.FirstName,
+                LastName = coordinator.LastName,
+                ImageUrl = coordinator.ImageUrl
+            };
+            return View(model);
         }
 
-        // POST: Coordinators/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,FirstName,LastName,ImageUrl")] Coordinator coordinator)
+        public async Task<IActionResult> Edit(CoordinatorViewModel model)
         {
-            if (id != coordinator.Id)
-            {
-                return NotFound();
-            }
-
             if (ModelState.IsValid)
             {
-                try
+                var coordinator = await _context.Coordinators.FindAsync(model.Id);
+                if (coordinator == null)
                 {
-                    _context.Update(coordinator);
-                    await _context.SaveChangesAsync();
+                    return NotFound();
                 }
-                catch (DbUpdateConcurrencyException)
+
+                coordinator.FirstName = model.FirstName;
+                coordinator.LastName = model.LastName;
+                if (model.ImageFile != null)
                 {
-                    if (!CoordinatorExists(coordinator.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                    coordinator.ImageUrl = await _imageHelper.UploadImageAsync(model.ImageFile, model.FullName, "Coordinator");
                 }
+                _context.Update(coordinator);
+                await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(coordinator);
+            return View(model);
         }
 
         // GET: Coordinators/Delete/5
