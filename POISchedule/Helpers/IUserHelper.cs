@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using System.Threading.Tasks;
     using POISchedule.Data.Entities;
-    //TODO: 2 interface ISuerHelper
+    
     public interface IUserHelper
     {
         Task<User> GetUserByEmailAsync(string email);

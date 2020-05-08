@@ -1,14 +1,17 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using POISchedule.Data;
-using POISchedule.Data.Entities;
-using POISchedule.Helpers;
-using POISchedule.Models;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace POISchedule.Controllers
+﻿namespace POISchedule.Controllers
 {
+    using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Mvc;
+    using Microsoft.EntityFrameworkCore;
+    using POISchedule.Data;
+    using POISchedule.Data.Entities;
+    using POISchedule.Helpers;
+    using POISchedule.Models;
+    using System.Linq;
+    using System.Threading.Tasks;
+
+
+    [Authorize(Roles = "Lender")]
     public class CoordinatorsController : Controller
     {
         private readonly DataContext _context;

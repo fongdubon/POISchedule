@@ -1,5 +1,6 @@
 ﻿namespace POISchedule.Controllers
 {
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.EntityFrameworkCore;
     using POISchedule.Data;
@@ -7,6 +8,7 @@
     using System.Linq;
     using System.Threading.Tasks;
 
+    [Authorize(Roles = "Admin")]
     public class ClassroomTypesController : Controller
     {
         private readonly DataContext context;

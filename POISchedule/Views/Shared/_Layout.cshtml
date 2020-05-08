@@ -47,10 +47,21 @@
                             <li><a asp-area="" asp-controller="Coordinators" asp-action="Index">Coordinators</a></li>
                             <li><a asp-area="" asp-controller="Students" asp-action="Index">Students</a></li>
                             <li><a asp-area="" asp-controller="Teachers" asp-action="Index">Teachers</a></li>
+                            <li><a asp-area="" asp-controller="AdministrationStaffs" asp-action="Index">Administration Staff</a></li>
                         </ul>
                     </li>
-                    <li><a asp-area="" asp-controller="Subjects" asp-action="Index">Subjects</a></li>
-                    
+                    <li><a asp-area="" asp-controller="Subjects" asp-action="Index">Subjects</a></li>                    
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    @if (this.User.Identity.IsAuthenticated)
+                    {
+                        <li><a asp-area="" asp-controller="Account" asp-action="ChangeUser">@this.User.Identity.Name</a></li>
+                        <li><a asp-area="" asp-controller="Account" asp-action="Logout">Logout</a></li>
+                    }
+                    else
+                    {
+                        <li><a asp-area="" asp-controller="Account" asp-action="Login">Login</a></li>
+                    }
                 </ul>
             </div>
         </div>

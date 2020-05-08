@@ -8,5 +8,7 @@
 
         [Display(Name = "Foto")]
         public string ImageUrl { get; set; }
+
+        public User User { get; set; }
     }
 }

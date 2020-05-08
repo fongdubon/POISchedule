@@ -54,17 +54,18 @@ namespace POISchedule.Controllers
         {
             if (ModelState.IsValid)
             {
+                //TODO: Corregir con usuario
                 var teacher = new Teacher
                 {
-                    FirstName = model.FirstName,
-                    LastName = model.LastName
+                    //FirstName = model.FirstName,
+                    //LastName = model.LastName
                 };
                 if (model.ImageFile != null)
                 {
-                    teacher.ImageUrl = await _imageHelper.UploadImageAsync(
-                        model.ImageFile,
-                        model.FullName,
-                        "Teacher");
+                    //teacher.ImageUrl = await _imageHelper.UploadImageAsync(
+                    //    model.ImageFile,
+                    //    model.FullName,
+                    //    "Teacher");
                 }
                 _context.Add(teacher);
                 await _context.SaveChangesAsync();
@@ -88,8 +89,10 @@ namespace POISchedule.Controllers
             var model = new TeacherViewModel
             {
                 Id = teacher.Id,
-                FirstName = teacher.FirstName,
-                LastName = teacher.LastName,
+
+                //TODO: Corregir con usuario
+                //FirstName = teacher.FirstName,
+                //LastName = teacher.LastName,
                 ImageUrl = teacher.ImageUrl
             };
             return View(model);
@@ -107,15 +110,16 @@ namespace POISchedule.Controllers
                     return NotFound();
                 }
 
-                teacher.FirstName = model.FirstName;
-                teacher.LastName = model.LastName;
-                if (model.ImageFile != null)
-                {
-                    teacher.ImageUrl = await _imageHelper.UploadImageAsync(
-                        model.ImageFile,
-                        model.FullName,
-                        "Teacher");
-                }
+                //TODO: Corregir con usuario
+                //teacher.FirstName = model.FirstName;
+                //teacher.LastName = model.LastName;
+                //if (model.ImageFile != null)
+                //{
+                //    teacher.ImageUrl = await _imageHelper.UploadImageAsync(
+                //        model.ImageFile,
+                //        model.FullName,
+                //        "Teacher");
+                //}
                 _context.Update(teacher);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
