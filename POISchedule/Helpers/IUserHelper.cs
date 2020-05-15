@@ -4,7 +4,8 @@
     using System.Collections.Generic;
     using System.Threading.Tasks;
     using POISchedule.Data.Entities;
-    
+    using Microsoft.AspNetCore.Mvc.Rendering;
+
     public interface IUserHelper
     {
         Task<User> GetUserByEmailAsync(string email);
@@ -34,5 +35,9 @@
         Task RemoveUserFromRoleAsync(User user, string roleName);
 
         Task DeleteUserAsync(User user);
+
+        IEnumerable<SelectListItem> GetComboRoles();
+
+
     }
 }

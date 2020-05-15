@@ -8,7 +8,7 @@
     using System.Linq;
     using System.Threading.Tasks;
 
-    [Authorize(Roles = "Admin")]
+    //[Authorize(Roles = "Admin")]
     public class ClassroomTypesController : Controller
     {
         private readonly DataContext context;

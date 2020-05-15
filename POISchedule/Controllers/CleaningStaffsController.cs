@@ -10,7 +10,7 @@
     using System.Linq;
     using System.Threading.Tasks;
 
-    [Authorize(Roles = "User")]
+    //[Authorize(Roles = "User")]
     public class CleaningStaffsController : Controller
     {
         private readonly DataContext _context;

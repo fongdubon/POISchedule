@@ -1,5 +1,8 @@
 ﻿namespace POISchedule.Models
 {
+    using Microsoft.AspNetCore.Mvc.Rendering;
+    using System.Collections;
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
     public class RegisterNewUserViewModel
@@ -32,5 +35,12 @@
         [Display(Name = "Confirm")]
         [Compare("Password")]
         public string Confirm { get; set; }
+
+        [Required(ErrorMessage = "{0} is required")]
+        [Range(1,int.MaxValue,ErrorMessage = "Must select a role")]
+        [Display(Name = "Rol")]
+        public int RolId { get; set; }
+
+        public IEnumerable<SelectListItem> Roles { get; set; }
     }
 }

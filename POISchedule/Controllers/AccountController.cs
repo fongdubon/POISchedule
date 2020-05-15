@@ -63,7 +63,10 @@
         public IActionResult Register()
         {
             //TODO: ver el rol con un combo dara  de alta los roles en el seeder
-            var model = new RegisterNewUserViewModel();
+            var model = new RegisterNewUserViewModel
+            {
+                Roles = userHelper.GetComboRoles()
+            };
             return View(model);
         }
 
@@ -81,7 +84,8 @@
                         LastName = model.LastName,
                         PhoneNumber = model.PhoneNumber,
                         UserName = model.UserName,
-                        Email = model.UserName
+                        Email = model.UserName,
+
                     };
                     var result = await this.userHelper.AddUserAsync(user, model.Password);
                     if(result != IdentityResult.Success)

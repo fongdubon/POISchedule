@@ -6,6 +6,7 @@
     using System.Linq;
     using System.Threading.Tasks;
     using POISchedule.Data.Entities;
+    using Microsoft.AspNetCore.Mvc.Rendering;
 
     public class UserHelper : IUserHelper
     {
@@ -107,6 +108,22 @@
         public async Task DeleteUserAsync(User user)
         {
             await _userManager.DeleteAsync(user);
+        }
+
+        public IEnumerable<SelectListItem> GetComboRoles()
+        {
+            var list = _roleManager.Roles.Select(
+                c => new SelectListItem
+                {
+                    Text = c.Name,
+                    Value = $"{c.Id}"
+                }).ToList();
+            list.Insert(0, new SelectListItem
+            {
+                Text = "[debe seleccionar un rol...]",
+                Value = "0"
+            });
+            return list;
         }
     }
 }

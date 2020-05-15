@@ -11,7 +11,7 @@
     using System.Threading.Tasks;
 
 
-    [Authorize(Roles = "Lender")]
+    //[Authorize(Roles = "Lender")]
     public class CoordinatorsController : Controller
     {
         private readonly DataContext _context;
