@@ -1,7 +1,578 @@
 ﻿@{
-    ViewData["Title"] = "About";
+    ViewData["Title"] = "Acerca de nosotros";
 }
-<h2>@ViewData["Title"]</h2>
-<h3>@ViewData["Message"]</h3>
 
-<p>Use this area to provide additional information.</p>
+<br />
+<div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000">
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+    </ol>
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <img src="~/images/UMAD_4.jpg" width="1200" height="400" alt="ASP.NET" class="img-responsive" />
+        </div>
+        <div class="item">
+            <img src="~/images/UMAD_5.jpg" width="1200" height="400" alt="Visual Studio" class="img-responsive" />
+        </div>
+    </div>
+    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<br />
+<br />
+<div class="panel-group" id="info" role="tablist">
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading1">
+            <h3 class="panel-title">
+                <a href="#collapse1" data-toggle="collapse" data-parent="#info">
+                    <strong>Historia</strong>
+                </a>
+            </h3>
+        </div>
+
+        <div id="collapse1" class="panel-collapse collapse">
+            <div class="panel-body">
+                <p align="justify">
+                    En 1982 se funda en Puebla, la primera universidad protestante, ofreciendo dos licenciaturas. Así
+                    surge como la Escuela Superior de Administración y Contaduría con estudios incorporados a la Universidad
+                    Nacional Autónoma de México; es en 1986 que obtiene el nombre oficial de Universidad Madero.
+                </p>
+
+                <p align="justify">
+                    En diciembre de 1991 se inicia la construcción de su campus central actual, ubicado en los límites de la
+                    ciudad de Puebla y San Andrés Cholula, ofreciendo 4 programas de licenciatura, en Agosto de 1993 se convirtieron
+                    en 7 programas y varios diplomados.
+                </p>
+
+                <p align="justify">
+                    Durante los años de 1995 al 2000, se continúa con el desarrollo de la Universidad Madero, extendiendo y mejorando
+                    la infraestructura, se ofertan nuevos programas de posgrado y una especialidad en Desarrollo de las Habilidades
+                    de Pensamiento. Al mismo tiempo se continúan los trabajos para fortalecer la presencia y vinculación de la Universidad
+                    Madero con empresas regionales a través de la creación de su Centro Internacional de Negocios y un departamento de
+                    Prácticas Profesionales, que permitió obtener el premio Nacional de Exportación 1997 en la categoría de institución educativa.
+                </p>
+
+                <p align="justify">
+                    En el año de 1999 la Universidad Madero decide ampliar sus alcances y adquiere el Centro Universitario del Papaloapan en
+                    Tuxtepec, Oaxaca., con una oferta académica a nivel Bachillerato, 7 programas de licenciatura y 1 maestría en Administración
+                    y Dirección de Negocios.
+                </p>
+
+                <p align="justify">
+                    Para el 2002 se ofrecen 14 programas de licenciatura y las maestrías en Administración y Dirección de Negocios y Derecho
+                    Comercial Internacional.
+                </p>
+
+                <p align="justify">
+                    En nuestro vigésimo aniversario, se obtiene la Acreditación de la FIMPES, convirtiéndonos en una de las tres universidades
+                    en la ciudad de Puebla, en ser parte de la Federación y un año después la Universidad se convierte en la primera en obtener
+                    su Certificación bajo la Norma ISO 9001:2000.
+                </p>
+
+                <p align="justify">
+                    Para el año 2005 la Universidad reformula e implementa su Modelo Educativo Basado en el Aprendizaje (MEBA). En el año 2007
+                    la Universidad Madero se consolida como Universidad líder en el área de Comercio Exterior. En lo deportivo por segundo año
+                    consecutivo, se convirtió en Campeón Nacional en la Categoría Juvenil “A” el equipo de los Tigres Blancos en baloncesto.
+                    Algo muy importante y que se logró por primera vez, fue el Campeonato Nacional en la Liga Premier de Baloncesto Femenil.
+                </p>
+
+                <p align="justify">
+                    En el año de 2008 se celebraron los 25 años de la Universidad Madero. En ese mismo año, la SEP Federal, otorgó un certificado
+                    que la acredita como una Institución de Excelencia Académica, lo que permitió que la UMAD entrara en el padrón de las 25 universidades
+                    que a nivel nacional han obtenido este reconocimiento.
+                </p>
+
+                <p align="justify">
+                    En este mismo año, también la FIMPES validó la calidad académica de la Institución, destacando puntos como: programas educativos,
+                    servicios estudiantiles, filosofía institucional, propósitos, planeación y efectividad, normatividad, gobierno y administración,
+                    personal académico y de apoyo, apoyos académicos y recursos físicos y financieros, para otorgar la acreditación en la modalidad lisa y llana.
+                </p>
+
+                <p align="justify">
+                    Durante la competencia nacional de CONADEIP 2009 en la ciudad de Querétaro, el equipo de atletismo obtuvo cinco medallas de oro y dos de plata,
+                    además de romper tres récords nacionales. En la Olimpiada Nacional Juvenil 2009 se ganaron las siguientes preseas: tercer lugar nacional del
+                    equipo de baloncesto femenil en juvenil mayor; medalla de plata en 4 x 100; medalla de plata en 4 x 400 y medalla de plata en 400 metros planos.
+                </p>
+
+                <p align="justify">
+                    Para el año 2010 la UMAD se incorpora al Consorcio Universitario, donde participan instituciones educativas establecidas en la entidad: UDLAP,
+                    UPAEP, TEC de Monterrey, IBERO, BUAP y ANAHUAC. Además se obtiene la recertificación en la Norma Internacional ISO 9001:2002. También se inició el Programa
+                    Sistema de Sustentabilidad y Medio Ambiente (SSUMA), para fortalecer la cultura entre la comunidad universitaria en el cuidado del medio ambiente.
+                    Al respecto, se cuenta con un centro de acopio donde se recibe papel, pilas, aparatos electrónicos, PET, aluminio y vidrio para su reciclado.
+                </p>
+
+                <p align="justify">
+                    En lo deportivo el equipo de baloncesto femenil categoría juvenil “C” ganó el Campeonato Nacional de CONADEIP. Este logro marcó la historia
+                    ya que por primera vez un equipo poblano de mujeres es Campeón Nacional Juvenil.
+                </p>
+
+                <p align="justify">
+                    Durante 2011, en el Campeonato Nacional de Natación CONADEIP se obtuvieron dos medallas de oro, seis de plata y tres de bronce, además de
+                    ser campeones a nivel Nacional Varonil en Baloncesto Categoría Primera Fuerza y Subcampeón en fútbol americano juvenil “C”.
+                </p>
+
+                <p align="justify">
+                    Para el 2012 la Universidad Madero celebró su 30 aniversario, inauguró la primera etapa de sus instalaciones deportivas, que
+                    llevan por nombre Sport Center. En el área académica, inició los trabajos del Campus Virtual, que actualmente imparte diplomados
+                    para el Desarrollo de Habilidades Directivas y la Maestría en Imagen y Relaciones Públicas. El equipo Tigres Blancos obtuvo finalmente
+                    el Campeonato Nacional de Baloncesto Femenil en la categoría de primera fuerza. La Universidad se adjudicó la medalla de plata en
+                    400 metros en el Campeonato Nacional de Natación.
+                </p>
+
+                <p align="justify">
+                    Es en el 2013 que la Universidad Madero se convirtió en la primera Universidad de América Latina en recibir un reconocimiento
+                    por parte de SAP University Alliance. Se implementa la metodología Ki Wo Tsu Kau (preocuparse por...) con el propósito de
+                    mejorar el desempeño laboral dentro de la organización a partir de la generación de ideas, este modelo se encuentra relacionado
+                    con la filosofía institucional y el Sistema de Gestión de la Calidad.
+                </p>
+
+                <p align="justify">
+                    Se obtiene la certificación bajo la Norma Internacional ISO 9001:2008 con Bureau Veritas.
+                </p>
+
+                <p align="justify">
+                    Hoy, en pleno Siglo XXI, la Universidad Madero ofrece 29 programas de licenciatura y 10 programas de posgrado,
+                    dando un total de 39 programas académicos en sus dos campus, tanto presenciales como on line, así como cursos
+                    no escolarizados, en modalidad de talleres y diplomados coordinados por Educación Continua.
+                </p>
+
+                <p align="justify">
+                    La Universidad Madero ha sido incesante en diversificar sus actividades académicas, las instalaciones y
+                    los diferentes recursos tanto humanos como materiales.
+                </p>
+
+                <p align="justify">
+                    Ahora en el 2015, se presenta este autoestudio bajo los criterios de efectividad, para con ello refrendar el compromiso con
+                    nuestra comunidad universitaria y, en consecuencia con la sociedad, como una institución de calidad, avalada por la acreditación de la FIMPES.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading2">
+            <h4 class="panel-title">
+                <a href="#collapse2" data-toggle="collapse" data-parent="#info">
+                    <strong>Misión y Visión</strong>
+                </a>
+            </h4>
+        </div>
+
+        <div id="collapse2" class="panel-collapse collapse">
+            <div class="panel-body">
+                <h3>MISIÓN</h3>
+                <p align="justify">
+                    Mejorar la calidad de vida de la sociedad formando  profesionistas competentes y difundiendo conocimiento,cultura y valores.
+                </p>
+                <h3>VISIÓN 2025</h3>
+                <p align="justify">
+                    Ser una comunidad educativa global de alto nivel académico y tecnológico.
+                </p>
+                <h3>POLÍTICA DE CALIDAD</h3>
+                <p align="justify">
+                    Desarrollar una cultura de calidad y de servicio, para lograr la satisfacción de los clientes a través de una mejora continua.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading3">
+            <h4 class="panel-title">
+                <a href="#collapse3" data-toggle="collapse" data-parent="#info">
+                    <strong>Acreditaciones y Afilaciones</strong>
+                </a>
+            </h4>
+        </div>
+        <div id="collapse3" class="panel-collapse collapse">
+            <div class="panel-body">
+                <p align="justify">
+                    La calidad académica de la UMAD esta avalada no sólo por sus planes de estudio y el nivel de sus egresados,
+                    sino también por estándares de calidad certificados por organismos nacionales e internacionales,
+                    como son la FIMPES y el sistema ISO.
+                </p>
+                <h3>FIMPES</h3>
+                <p align="justify">
+                    Actualmente la Universidad Madero cuenta con la acreditación de la Federación de Instituciones
+                    Mexicanas Particulares de Educación Superior (FIMPES) que ubican a la UMAD entre las instituciones
+                    de educación superior que han cumplido con los mayores parámetros de calidad académica en todo el país.
+                </p>
+                <p align="justify">
+                    La acreditación de la FIMPES valida la calidad académica de la Institución, destacando puntos como: programas educativos,
+                    servicios estudiantiles, filosofía institucional, propósitos, planeación y efectividad, normatividad, gobierno y
+                    administración, personal académico, estudiantes, personal administrativo, de servicio técnico y de apoyo, apoyos
+                    académicos, recursos físicos y recursos financieros.
+                </p>
+                <h3>ISO</h3>
+                <p align="justify">
+                    Después de cumplir con el proceso de certificación y con la auditoria que realizó la empresa certificadora
+                    internacional BSI, la UMAD alcanzó la Certificación ISO 9001:2008 en el proceso de enseñanza aprendizaje
+                    que la convierte en la primera institución de educación superior en Puebla y la región en contar con dos
+                    sistemas de calidad a nivel nacional e internacional.
+                </p>
+                <p align="justify">
+                    La certificación ISO (International Standards Organization, por sus siglas en inglés), permite a la UMAD demostrar
+                    en documentos y en la práctica -implantado y observado- que tiene un sistema de aseguramiento de calidad en su sistema
+                    de enseñanza aprendizaje a la par que cualquier otra Institución importante del mundo; porque se mide con el mismo
+                    criterio mundial y es evaluada por una de las empresas certificadoras que aseguran que su sistema cumpla con todos los criterios requeridos.
+                </p>
+                <h3>Certificado de Excelencia Académica SEP Federal</h3>
+                <p align="justify">
+                    Afinales de los años 90 iniciamos un programa interno de mejora de la calidad, lo cual ha implicado un trabajo conjunto
+                    en dos vertientes: las personas y los procesos.
+                </p>
+                <p align="justify">
+                    Es nuestro objetivo principal la calidad académica, para ello partimos de evaluar, capacitar y apoyar en la formación del
+                    personal e investigar las necesidades y expectativas de los estudiantes. Asimismo revisar y adecuar los procesos docentes y los de apoyo.
+                </p>
+                <p align="justify">
+                    Dadas las tendencias hacia la medición y a considerar estándares internos y externos, trabajamos con organizaciones como ISO y FIMPES,
+                    documentando lo realizado y buscando al hacerlo un beneficio para nuestra comunidad educativa.
+                </p>
+                <p align="justify">
+                    Con el acuerdo 279 del año 2000 el Gobierno Federal, convino en dar un tratamiento de simplificación administrativa a
+                    las universidades que cumplieran niveles muy específicos de calidad en su desempeño. Este mes de abril la SEP Federal,
+                    con el acuerdo de la SEP Estatal, nos ha entregado un certificado que acredita a la Universidad Madero como una institución
+                    de excelencia académica, ubicándonos dentro de las 25 universidades que a nivel nacional han obtenido este reconocimiento.
+                </p>
+                <h3>Relaciones Industriales de Puebla y Tlaxcala A.C.</h3>
+                <p align="justify">
+                    Asociación dedicada a promover y facilitar la integración y el desarrollo de los responsables de la Administración del Personal,
+                    para el logro de los objetivos organizacionales de las Empresas.
+                </p>
+                <h3>CAMEXA</h3>
+                <p align="justify">
+                    Cámara Mexicano Alemana de Comercio e Industria
+                </p>
+                <p align="justify">
+                    La Cámara Mexicano Alemana de Comercio e Industria (CAMEXA), cuenta con 500 empresas asociadas de las cuales alrededor de 
+                    450 están establecidas en la República Mexicana y el resto en la República Federal de Alemania y en otros países.
+                </p>
+                <p align="justify">
+                    Es una asociación de interés común que existe desde 1929. La tarea principal de CAMEXA es fomentar el comercio entre Alemania y México.
+                </p>
+                <p align="justify">
+                    La Cámara sirve como una plataforma de intercambio de información entre los socios. Al mismo tiempo articula los intereses de sus agremiados
+                    ante dependencias gubernamentales y asociaciones privadas.
+                </p>
+                <p align="justify">
+                    La tarea fundamental de CAMEXA, consiste en ofrecer una plataforma para el intercambio de información y de propiciar 
+                    encuentros y contactos recíprocos entre los socios. Al mismo tiempo CAMEXA reúne y representa los intereses comunes de 
+                    sus asociados. A través de los eventos que CAMEXA organiza para sus asociados, se ofrecen valiosos temas por parte de 
+                    reconocidos expertos y grandes personalidades y, al mismo tiempo es otro excelente medio para entablar contacto personal 
+                    con los demás socios participantes, accediendo a la invaluable fuente de información entre los empresarios mexicanos 
+                    y alemanes ya establecidos en México.
+                </p>
+                <p align="justify">
+                    La Comisión Nacional Deportiva Estudiantil de Instituciones Privadas, AC (Conadeip) es el organismo nacional que agrupa 
+                    a más de cien instituciones educativas privadas de nivel superior del país y que busca contribuir a través del deporte, 
+                    en la formación de los futuros profesionistas que se preparan en sus aulas.
+                </p>
+                <p align="justify">
+                    La Conadeip está dividida en diferentes regiones que agrupan a todas las instituciones afiliadas del país.
+                    <ul>
+                        <li>Zona Oriente</li>
+                        <li>Veracruz</li>
+                        <li>Puebla</li>
+                        <li>Yucatán</li>
+                    </ul>
+                </p>
+                <h3>Ki Wo Tsukau® (KWT), “Preocuparse por…"</h3>
+                <p align="justify">
+                    KWT es una metodología que funciona en la UMAD como una herramienta para gestionar la mejora, con el objetivo 
+                    de atender las necesidades de los clientes internos y externos, en búsqueda de convertir la mejora en el estado 
+                    habitual de comportamiento, desempeño y pensamiento de  los que integramos la comunidad UMAD. Ki Wo Tsukau es 
+                    una innovadora forma de trabajo que tiene alcance a todos los niveles de la organización.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading4">
+            <h4 class="panel-title">
+                <a href="#collapse4" data-toggle="collapse" data-parent="#info">
+                    <strong>Filosofía Institucional</strong>
+                </a>
+            </h4>
+        </div>
+
+        <div id="collapse4" class="panel-collapse collapse">
+            <div class="panel-body">
+                <h3>Introducción</h3>
+                <p align="justify">
+                    Aquí se encuentran los principios que permiten a la comunidad universitaria comprender el proyecto educativo,
+                    enlazar el pasado con el presente y guiar nuestro futuro; con el propósito de seguir manifestando con hechos el
+                    amor de Dios y el compromiso de la Iglesia Metodista de México, para la sociedad.
+                </p>
+                <h3>IDEARIO INSTITUCIONAL</h3>
+                <p align="justify">
+                    Este apartado contiene los elementos que guían el trabajo de la comunidad académica y administrativa.
+                    Filosofía Metodista En la UMAD la educación que se imparte promueve el amor, la espiritualidad y el respeto
+                    a las personas en sus diversas creencias e ideologías. Como religión cristiana, el metodismo aporta un acento
+                    poderoso en la vida social y personal, su papel es fuente de fortalecimiento de valores culturales y
+                    prácticas sociales que apoyan el amor, el desarrollo humano, la justicia, el respeto, la inclusión y
+                    la solidaridad. El metodismo considera a todo ser humano como igual a los demás, inteligente, espiritual,
+                    con necesidad de vivir en un mundo más compartido, con capacidad de decidir sobre sí mismo y de influir con su
+                    conducta en la calidad de vida de su comunidad.
+                </p>
+                <h3>Educación</h3>
+                <p align="justify">
+                    La educación es una necesidad permanente de la sociedad y de las personas para enfrentar la complejidad de
+                    la vida, por ello debe ser flexible al cambio, creativa, apoyada en las ciencias, el deporte, las artes y
+                    las nuevas tecnologías en cada etapa educativa, las acciones académicas tienen que favorecer estrategias de
+                    pensamiento, habilidades comunicativas y de investigación, de relación inter e intra personal, para que los
+                    alumnos sean capaces de abordar diferentes objetos del conocimiento. La Educación Metodista debe promover
+                    aprendizajes genuinos y equilibrados tanto del saber académico como del saber aplicado a diferentes contextos.
+                    Nuestros colaboradores y asociados Son hombres y mujeres que unen sus talentos para hacer que se alcance
+                    con éxito nuestra misión, visión y metas. En la UMAD se mantiene un esfuerzo permanente por tener personal
+                    calificado, motivado y comprometido para ofrecer servicios con altos estándares de calidad. Como distinción a
+                    su esfuerzo se procura dar reconocimiento, retribución, capacitación y trato digno.
+                </p>
+                <h3>Estudiantes</h3>
+                <p align="justify">
+                    La razón de ser de la UMAD son sus estudiantes. En ellos se centra el quehacer educativo cotidiano pues nos
+                    han sido encomendados para ser educados con una visión transformadora, humana y de servicio. Serán formados,
+                    a lo largo de su trayectoria escolar, para su plena inclusión social y laboral bajo un actuar ético y moral.
+                    Para ello se requiere de procesos educativos que impulsen un balance armónico entre lo cognitivo y las virtudes
+                    con la finalidad de ayudarlos a desarrollar su proyecto de vida.
+                </p>
+                <h3>Formación del carácter</h3>
+                <p align="justify">
+                    Las personas tienen derecho a crecer en ámbitos favorecedores de autoestima, optimismo y de voluntad para reponerse a
+                    situaciones adversas, para asimilar las experiencias de triunfo y desarrollar el manejo positivo de la frustración.
+                    En la UMAD se provee al estudiante de experiencias de aprendizaje basadas en su iniciativa, autonomía, disciplina,
+                    respeto e inteligencias para que logre con más seguridad enfrentar los retos y oportunidades que se le presenten en
+                    la vida como una persona íntegra y con orientación al bien común.
+                </p>
+                <h3>Servicio</h3>
+                <p align="justify">
+                    Ante una sociedad indiferente a los problemas del prójimo, en la  UMAD, el servicio se concibe como una acción
+                    humana indispensable que satisface, con amor, las necesidades individuales y de la comunidad. El servicio que
+                    la institución ofrece debe considerar los requerimientos de todas las personas que intervienen en los procesos
+                    educativos actuando siempre bajo los principios de calidad: oportunidad, eficacia y eficiencia.
+                </p>
+                <h3>Apertura al cambio</h3>
+                <p align="justify">
+                    El ciudadano del siglo XXI enfrenta retos, producto de un mundo globalizante, con rápidos y nuevos desarrollos
+                    tecnológicos, en escenarios en los que predomina la turbulencia y la incertidumbre, sin embargo donde también se
+                    dan un cúmulo de oportunidades. En la UMAD, es de suma importancia adquirir y desarrollar las competencias que
+                    permitan comprender, explicar y encauzar las oportunidades desde posturas de equidad, apertura, prontitud y de
+                    reconocimiento a las consecuencias de los mismos.
+                </p>
+                <h3>Desarrollo sustentable</h3>
+                <p align="justify">
+                    En las instituciones metodistas, la cultura de sustentabilidad es un ideal que promueve el buen uso de todos 
+                    los recursos para mantener la armonía entre el planeta, la sociedad, la persona y los procesos productivo-económico-financieros. 
+                    A la sustentabilidad la concebimos como una práctica cotidiana, que requiere asumir la responsabilidad del cuidado de la 
+                    naturaleza y de la gente, a través de un consumo racional y cuidado personal, familiar e institucional. El desarrollo 
+                    sustentable es resultado de decisiones y acciones ligadas con el ejercicio del poder, por lo tanto en los colegios 
+                    metodistas éstas deben estar basadas en los análisis pertinentes, la responsabilidad ética y rendición de cuentas.
+                </p>
+                <h3>Ciudadanía y globalización</h3>
+                <p align="justify">
+                    La convivencia con culturas, comunidades y personas diferentes es una realidad para los ciudadanos del siglo XXI. 
+                    El desarrollo responsable de una ciudadanía activa y multicultural es requisito para mantener la civilización, 
+                    la ciudadanía requiere de vinculación y practica desde el aprendizaje y en la aplicación del conocimiento, 
+                    para orientar a las personas en su interacción, adaptación y éxito más como colectividad que por logros individuales.
+                </p>
+                <h3>Nuestros valores:</h3>
+                <ol>
+                    <li>
+                        <strong>Honestidad</strong>
+                        <p align="justify">
+                            Aceptamos que la Honestidad es la congruencia entre nuestros pensamientos, palabras y acciones,
+                            esta congruencia nos ayuda a evitar los conflictos de intereses.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Responsabilidad</strong>
+                        <p align="justify">
+                            Somos Responsables cuando realizamos nuestro mejor esfuerzo para cumplir los compromisos y 
+                            obligaciones adquiridas, rindiendo cuentas y aceptando los resultados.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Comunidad</strong>
+                        <p align="justify">
+                            Construimos relaciones de convivencia positiva en el lugar donde vivimos.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Espiritualidad</strong>
+                        <p align="justify">
+                            Mantenemos, fortalecemos e investigamos la relación del hombre con Dios.
+                        </p>
+                    </li>
+                    <li>
+                        <strong>Conciencia Ecológica y Sustentabilidad</strong>
+                        <p align="justify">
+                            Es el compromiso a utilizar los recursos naturales de manera racional y eficiente preservando en todo momento el medio ambiente.
+                        </p>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+
+    <div class="panel panel-default">
+        <div class="panel-heading" role="tab" id="heading5">
+            <h4 class="panel-title">
+                <a href="#collapse5" data-toggle="collapse" data-parent="#info">
+                    <strong>Nuestro legado</strong>
+                </a>
+            </h4>
+        </div>
+
+        <div id="collapse5" class="panel-collapse collapse">
+            <div class="panel-body">
+                <h3>SÍ A LAS TRADICIONES NO AL TRADICIONALISMO</h3>
+                <p align="justify">
+                    El tema de las tradiciones puede ser motivo de discusión pues algunas personas consideran que no van de la mano 
+                    con la Palabra de Dios. Otros consideran que son muy necesarias y se apegan tanto a ellas poniéndolas en un 
+                    nivel de importancia que las colocan por arriba de cualquier otro concepto o persona. Sin embargo, debemos 
+                    preguntarnos: ¿Son buenas o malas las tradiciones? ¿Qué de bueno puede dejarnos a nuestra vida practicar algunas tradiciones?
+                </p>
+                <p align="justify">
+                    Es interesante notar que Dios sí apeló a formar tradiciones. Él utilizó con el pueblo de Israel una 
+                    palabra muy interesante que exhortaba no sólo a identificar elementos culturales o tradicionales sino que
+                    los animaba a vivir una vida práctica de acuerdo a lo que ellos debían creer. La palabra “recordar” en el 
+                    libro de Deuteronomio los remontaba a entender elementos culturales, históricos y por consiguiente tradicionales. 
+                    ¿Qué debemos entender entonces por tradiciones? En el presente documento se expresan tres escenas aisladas, 
+                    las cuales reflejan la palabra que Dios pronunció de manera enfática al pueblo de Israel y denotan una tradición 
+                    muy importante “Acuérdate” (7:18; 8:2-6 y 9:7).
+                </p>
+                <ol type="I" start="1" style="font:bold; font-size:x-large">
+                    <li>
+                        <h3><strong>EL RECORDATORIO DE LA LIBERACIÓN “DIOS EXHORTÓ A ISRAEL A RECORDAR LA GRAN LIBERACIÓN DE EGIPTO DT. 7:18. (7:1-18)</strong></h3>
+                        <p align="justify" style="font-size:small">
+                            Cuando Jehová tu Dios te haya introducido en la tierra en la cual entrarás para tomarla, y haya echado de delante de ti a 
+                            muchas naciones, al heteo, al gergeseo, al amorreo, al cananeo, al ferezeo, al heveo y al jebuseo, siete naciones mayores
+                            y más poderosas que tú, 2 y Jehová tu Dios las haya entregado delante de ti, y las hayas derrotado, las destruirás del todo; 
+                            no harás con ellas alianza, ni tendrás de ellas misericordia. 3 Y no emparentarás con ellas; no darás tu hija a su hijo, 
+                            ni tomarás a su hija para tu hijo. 4 Porque desviará a tu hijo de en pos de mí, y servirán a dioses ajenos; y el furor de 
+                            Jehová se encenderá sobre vosotros, y te destruirá pronto. 5 Mas así habéis de hacer con ellos: sus altares destruiréis, y 
+                            quebraréis sus estatuas, y destruiréis sus imágenes de Asera, y quemaréis sus esculturas en el fuego. Porque tú eres pueblo
+                            santo para Jehová tu Dios; Jehová tu Dios te ha escogido para serle un pueblo especial, más que todos los pueblos que están 
+                            sobre la tierra. 7 No por ser vosotros más que todos los pueblos os ha querido Jehová y os ha escogido, pues vosotros erais 
+                            el más insignificante de todos los pueblos; 8 sino por cuanto Jehová os amó, y quiso guardar el juramento que juró a vuestros 
+                            padres, os ha sacado Jehová con mano poderosa, y os ha rescatado de servidumbre, de la mano de Faraón rey de Egipto. 9 Conoce, 
+                            pues, que Jehová tu Dios es Dios, Dios fiel, que guarda el pacto y la misericordia a los que le aman y guardan sus 
+                            mandamientos, hasta mil generaciones; 10 y que da el pago en persona al que le aborrece, destruyéndolo; y no se demora con 
+                            el que le odia, en persona le dará el pago. 11 Guarda, por tanto, los mandamientos, estatutos y decretos que yo te mando hoy que 
+                            cumplas. 12 Y por haber oído estos decretos y haberlos guardado y puesto por obra, Jehová tu Dios guardará contigo el pacto y
+                            la misericordia que juró a tus padres. 13 Y te amará, te bendecirá y te multiplicará, y bendecirá el fruto de tu vientre y 
+                            el fruto de tu tierra, tu grano, tu mosto, tu aceite, la cría de tus vacas, y los rebaños de tus ovejas, en la tierra que juró
+                            a tus padres que te daría. 14 Bendito serás más que todos los pueblos; no habrá en ti varón ni hembra estéril, ni en tus ganados.
+                            15 Y quitará Jehová de ti toda enfermedad; y todas las malas plagas de Egipto, que tú conoces, no las pondrá sobre ti, antes las
+                            pondrá sobre todos los que te aborrecieren. 16 Y consumirás a todos los pueblos que te da Jehová tu Dios; no los perdonará tu ojo,
+                            ni servirás a sus dioses, porque te será tropiezo. 17 Si dijeres en tu corazón: Estas naciones son mucho más numerosas que yo;
+                            ¿cómo las podré exterminar? 18 no tengas temor de ellas; acuérdate bien de lo que hizo Jehová tu Dios con Faraón y con todo Egipto;
+                        </p>
+                        <p align="justify" style="font-size:small">
+                            El pueblo de Israel, siempre se ha visto como un ejemplo análogo a nuestra vida. Al parecer Dios permitió todos esos
+                            acontecimientos en Israel, para que hoy en día, nosotros podamos aprender tanto de lo bueno como de lo malo. Sin embargo, 
+                            muchas veces actuamos igual que Israel; haciendo lo malo, a pesar de que ya sabemos las consecuencias que éste tuvo. 
+                            Este primer recordatorio nos lleva a inmortalizar la liberación de Israel, pero nos hace pensar en liberaciones 
+                            que Dios mismo nos ha dado. En situaciones donde nosotros pensamos que todo está en contra nuestra, e incluso cuando 
+                            nuestra vida está en peligro.
+                        </p>
+                        <p align="justify" style="font-size:small">
+                            Esta primera escena nos ayuda no solo a recordar la liberación de Dios a Israel, sino también las liberaciones que 
+                            Dios nos ha dado en situaciones difíciles del pasado.  Por lo tanto, nos impele a mantener una identidad con el pueblo 
+                            de Dios, nos mueve a una sensación de seguridad y respaldo por Dios y nos invita a vivir una vida práctica de acuerdo 
+                            a la Palabra de Dios.
+                        </p>
+                    </li>
+                    <li>
+                        <h3>
+                            <strong>
+                                EL RECORDATORIO DE LA PROVISIÓN DIVINA “DIOS EXHORTÓ A ISRAEL A RECORDAR LA PROVISIÓN DIVINA DE
+                                LA PEREGRINACIÓN DT. 8:2-6.
+                            </strong>
+                        </h3>
+                        <p align="justify" style="font-size:small">
+                            Cuidaréis de poner por obra todo mandamiento que yo os ordeno hoy, para que viváis, y seáis multiplicados, y 
+                            entréis y poseáis la tierra que Jehová prometió con juramento a vuestros padres. 2 Y te acordarás de todo 
+                            el camino por donde te ha traído Jehová tu Dios estos cuarenta años en el desierto, para afligirte, 
+                            para probarte, para saber lo que había en tu corazón, si habías de guardar o no sus mandamientos.
+                        </p>
+                        <p align="justify" style="font-size:small">
+                            3 Y te afligió, y te hizo tener hambre, y te sustentó con maná, comida que no conocías tú, ni tus padres 
+                            la habían conocido, para hacerte saber que no sólo de pan vivirá el hombre, más de todo lo que sale de la 
+                            boca de Jehová vivirá el hombre.
+                        </p>
+                        <p align="justify" style="font-size:small">
+                            4 Tu vestido nunca se envejeció sobre ti, ni el pie se te ha hinchado en estos cuarenta años.
+                        </p>
+                        <p align="justify" style="font-size:small">
+                            5 Reconoce asimismo en tu corazón, que como castiga el hombre a su hijo, así Jehová tu Dios te castiga.
+                        </p>
+                        <p align="justify" style="font-size:small">
+                            6 Guardarás, pues, los mandamientos de Jehová tu Dios, andando en sus caminos, y temiéndole.
+                        </p>
+                        <p align="justify" style="font-size:small">
+                            Otro tipo de recordatorio, es el de la provisión en medio de un periodo histórico. Dios se había 
+                            encargado que el pueblo de Dios no tuviera necesidad de alimentos o de vestido. Hay ocasiones donde Dios 
+                            nos ha provisto en medio de las cosas que parecen adversas. En otras palabras, el recordar la forma en la 
+                            que Dios actúo con Israel y de cómo ha actuado con nosotros en su provisión nos debe mover a mantener una 
+                            identidad con el Pueblo de Dios y a mantener una seguridad y respaldo de Dios en nuestras vidas. La biblia 
+                            misma nos dice que Dios es dueño de todo y además es el proveedor. En ese sentido Dios es predecible e 
+                            impredecible a la vez. Es predecible porque sabemos que siempre va a proveer pero es impredecible porque 
+                            muchas veces no sabemos cómo va a proveer.
+                        </p>
+                        <p align="justify" style="font-size:small">
+                            Por esta razón, el recordar la provisión que Dios ha tenido en nuestra vida a lo largo de las situaciones 
+                            difíciles o momentos de bonanza, también nos invita a tener una actitud de sentido de pertenencia, 
+                            de protección, pero también a vivir una vida práctica y en agradecimiento a su provisión.
+                        </p>
+                    </li>
+                    <li>
+                        <h3>
+                            <strong>
+                                EL RECORDATORIO DEL PECADO PASADO “DIOS EXHORTÓ A ISRAEL A RECORDAR EL PECADO PASADO DURANTE SU
+                                PEREGRINACIÓN DT. 9:7.
+                            </strong>
+                        </h3>
+                        <p align="justify" style="font-size:small">
+                            ¿Quién de nosotros puede decir que está libre de pecado? Dios y nosotros mismos sabemos que nadie está libre de pecado. 
+                            El pueblo de Israel en medio de la adversidad provocó la ira a Dios, y Dios deja en claro que su pecado no fue agradable.
+                        </p>
+                        <p align="justify" style="font-size:small">
+                            El pecado de Israel durante su peregrinar, fue el no recordar el poder de Dios, reclamar por el alimento, 
+                            cuando Moisés pego a la roca, cuando no reconocieron los espías que podían entrar a conquistar la tierra. 
+                            Dios sabe nuestro pecado, él sabe nuestros errores. Sin embargo, él nos tiene donde estamos por su pura 
+                            misericordia. Pero así como Dios nos hace recordar las cosas que él ha hecho, nos hace recordar la misericordia 
+                            y a través de ésta darnos cuenta que debemos ser humildes reconociendo que todo se lo debemos a Dios y a su poder.
+                        </p>
+                        <p align="justify" style="font-size:small">
+                            La palabra de Dios dice: “ Acuérdate; no olvides cómo provocaste a ira al SEÑOR tu Dios en el desierto; 
+                            desde el día en que saliste de la tierra de Egipto hasta que llegasteis a este lugar, habéis sido rebeldes 
+                            contra el SEÑOR.8 Hasta en Horeb provocasteis a ira al SEÑOR, y el SEÑOR se enojó tanto contra vosotros
+                            que estuvo a punto de destruiros.9 Cuando subí al monte para recibir las tablas de piedra, las tablas del
+                            pacto que el SEÑOR había hecho con vosotros, me quedé en el monte cuarenta días y cuarenta noches; 
+                            no comí pan ni bebí agua”. Recordar eventos bíblicos por medio de tradiciones nos mueve a una identidad
+                            con el pueblo de Dios, a un sentimiento de protección por parte de Dios y a una vida práctica en los estatutos de Dios.
+                        </p>
+                        <p align="justify" style="font-size:small">
+                            Las tradiciones y en general nuestro legado, siempre serán importantes en nuestra vida. Siempre funcionarán 
+                            como una alerta ante nuevos conceptos, ante nuevas ideas o incluso nuevos retos. Nuestro legado nos da 
+                            identidad, nos permite tener una plataforma de arranque y sobre todo, tener un sentido de pertenencia, 
+                            protección y a manifestar de manera práctica de qué estamos hechos. El pertenecer a una institución 
+                            como la UMAD nos debe movernos a sentirnos orgullosos de ese legado que Juan Wesley instituyó, a tener 
+                            un sentido de pertenencia y protección, pero también a proclamar por medio de nuestra vida el amor de Dios.
+                        </p>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>

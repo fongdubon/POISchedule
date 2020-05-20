@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - POISchedule</title>
+    <title>@ViewData["Title"] - Schedule UMAD</title>
 
     <environment include="Development">
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
@@ -17,7 +17,7 @@
     </environment>
 </head>
 <body>
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-inverse navbar-fixed-top" style="background-color: #e70e02;">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -26,50 +26,50 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand">POISchedule</a>
+                <a asp-area="" asp-controller="Home" asp-action="Index" class="navbar-brand" style="color:#f1faee">Schedule UMAD</a>
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="About">About</a></li>
-                    <li><a asp-area="" asp-controller="Home" asp-action="Contact">Contact</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Index" style="color:#f1faee">Página principal</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="About" style="color:#f1faee">Acerca de nosotros</a></li>
+                    <li><a asp-area="" asp-controller="Home" asp-action="Contact" style="color:#f1faee">Contacto</a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Catalogues <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a asp-area="" asp-controller="Activities" asp-action="Index">Activities</a></li>
-                            <li><a asp-area="" asp-controller="ClassroomTypes" asp-action="Index">Classroom Types</a></li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:#f1faee">Catálogos<b class="caret"></b></a>
+                        <ul class="dropdown-menu" style="background-color: #001a4d">
+                            <li><a asp-area="" asp-controller="Activities" asp-action="Index" style="color:#f1faee; background-color: #001a4d">Actividades</a></li>
+                            <li><a asp-area="" asp-controller="ClassroomTypes" asp-action="Index" style="color:#f1faee; background-color: #001a4d">Tipos de aula</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Colaborators <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a asp-area="" asp-controller="CleaningStaffs" asp-action="Index">Cleaning Staff</a></li>
-                            <li><a asp-area="" asp-controller="Coordinators" asp-action="Index">Coordinators</a></li>
-                            <li><a asp-area="" asp-controller="Students" asp-action="Index">Students</a></li>
-                            <li><a asp-area="" asp-controller="Teachers" asp-action="Index">Teachers</a></li>
-                            <li><a asp-area="" asp-controller="AdministrationStaffs" asp-action="Index">Administration Staff</a></li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color:#f1faee">Colaboradores<b class="caret"></b></a>
+                        <ul class="dropdown-menu" style="background-color: #001a4d">
+                            <li><a asp-area="" asp-controller="CleaningStaffs" asp-action="Index" style="color:#f1faee; background-color: #001a4d">Personal de limpieza</a></li>
+                            <li><a asp-area="" asp-controller="Coordinators" asp-action="Index" style="color:#f1faee; background-color: #001a4d">Coordinadores</a></li>
+                            <li><a asp-area="" asp-controller="Students" asp-action="Index" style="color:#f1faee; background-color: #001a4d">Estudiantes</a></li>
+                            <li><a asp-area="" asp-controller="Teachers" asp-action="Index" style="color:#f1faee; background-color: #001a4d">Profesores</a></li>
+                            <li><a asp-area="" asp-controller="AdministrationStaffs" asp-action="Index" style="color:#f1faee; background-color: #001a4d">Personal administrativo</a></li>
                         </ul>
                     </li>
-                    <li><a asp-area="" asp-controller="Subjects" asp-action="Index">Subjects</a></li>                    
+                    <li><a asp-area="" asp-controller="Subjects" asp-action="Index" style="color:#f1faee">Materias</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     @if (this.User.Identity.IsAuthenticated)
                     {
                         <li><a asp-area="" asp-controller="Account" asp-action="ChangeUser">@this.User.Identity.Name</a></li>
-                        <li><a asp-area="" asp-controller="Account" asp-action="Logout">Logout</a></li>
+                        <li><a asp-area="" asp-controller="Account" asp-action="Logout">Salir</a></li>
                     }
                     else
                     {
                         <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user"></span><b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a asp-area="" asp-controller="Account" asp-action="Login">Login</a></li>
-                                <li><a asp-area="" asp-controller="Account" asp-action="Register">Register new user</a></li>
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-user" style="color:#f1faee"></span><b class="caret" style="color:#f1faee"></b></a>
+                            <ul class="dropdown-menu" style="background-color: #001a4d">
+                                <li><a asp-area="" asp-controller="Account" asp-action="Login" style="color:#f1faee; background-color: #001a4d">Acceder</a></li>
+                                <li><a asp-area="" asp-controller="Account" asp-action="Register" style="color:#f1faee; background-color: #001a4d">Registrar nuevo usuario</a></li>
                             </ul>
                         </li>
                     }
                 </ul>
-</div>
+            </div>
         </div>
     </nav>
 
@@ -79,7 +79,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; 2020 - POISchedule</p>
+            <p>&copy; 2020 - Schedule UMAD</p>
         </footer>
     </div>
 
